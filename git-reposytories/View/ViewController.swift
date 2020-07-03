@@ -54,7 +54,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         curentPage = 1
         if mode == 2 {
             desc = !desc
-            debugPrint("\(desc)")
         }
         else {
             desc = true
@@ -88,10 +87,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @objc func forkSort() {
         curentPage = 1
-        debugPrint("current page = \(curentPage)")
         if mode == 3 {
             desc = !desc
-            debugPrint("\(desc)")
         }
         else {
             desc = true
@@ -156,8 +153,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if Contains.isConnect {
                 cna.searchKey(page: curentPage, searchKey: searchTF.text!, repoTableView: reposTableView)
             } else {
+                Contains.arrRepo = arrRepoHome
                 Contains.arrRepo = Contains.arrRepo.filter({ (repo) -> Bool in
-                    return repo.reponame.contains(searchKey) || repo.username.contains(searchKey)
+                    return repo.reponame.lowercased().contains(searchKey.lowercased()) || repo.username.lowercased().contains(searchKey.lowercased())
                 })
                 self.reposTableView.reloadData()
             }
@@ -176,7 +174,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @objc func nextPage() {
         if Contains.isConnect {
-            debugPrint("\(Contains.arrRepo.count) - \(Contains.total_Repos)")
             Contains.loadMore =  true
             curentPage += 1
             if mode == 0 {
@@ -193,7 +190,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //debugPrint(Contains.arrRepo.count)
         return Contains.arrRepo.count
     }
     
