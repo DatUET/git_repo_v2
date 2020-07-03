@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>775339613965-qgcudh0ncrb77t31majcc97f5ar233qs.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.775339613965-qgcudh0ncrb77t31majcc97f5ar233qs</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBQ9F_XMTJ4MNwP9iDUX1cu_48_GCPDRZ8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>775339613965</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>gem.githubapi</string>
+	<key>PROJECT_ID</key>
+	<string>ios-github-repo-login</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ios-github-repo-login.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:775339613965:ios:a2b89ca637802c514e9a44</string>
+	<key>DATABASE_URL</key>
+	<string>https://ios-github-repo-login.firebaseio.com</string>
+</dict>
+</plist>

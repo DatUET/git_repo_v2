@@ -1,0 +1,6 @@
+framework module Pods_git_reposytories {
+  umbrella header "Pods-git-reposytories-umbrella.h"
+
+  export *
+  module * { export * }
+}
