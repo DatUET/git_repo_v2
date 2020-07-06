@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             loginView.isHidden = true
             loginCtl.getInfo()
             if Contains.isConnect {
-                cna.getRepoCurrentUser()
+                cna.getRepoCurrentUser(table: table)
             } else {
                 Contains.arrRepoPublicOfUser = cacheData.getRepoCoreData(nameEntity: "MyRepositoryPublicDataCore")
                 Contains.arrRepoPrivateOfUser = cacheData.getRepoCoreData(nameEntity: "MyRepositoryPrivateDataCore")

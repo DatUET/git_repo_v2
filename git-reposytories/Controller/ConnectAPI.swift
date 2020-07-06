@@ -120,8 +120,10 @@ class ConnectAPI{
         }
     }
     
-    public func getRepoCurrentUser() {
+    public func getRepoCurrentUser(table: UITableView) {
         Contains.arrRepoOfUser.removeAll()
+        Contains.arrRepoPublicOfUser.removeAll()
+        Contains.arrRepoPublicOfUser.removeAll()
         self.cacheData.deleteAllRepoDataCore(nameEntity: "MyRepositoryPublicDataCore")
         self.cacheData.deleteAllRepoDataCore(nameEntity: "MyRepositoryPrivateDataCore")
         let url = "https://api.github.com/user/repos"
@@ -147,7 +149,8 @@ class ConnectAPI{
                             }
                         }
                         Contains.arrRepoOfUser = Contains.arrRepoPublicOfUser
-                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+//                        debugPrint(Contains.arrRepoPublicOfUser.count + Contains.arrRepoPrivateOfUser.count)
+                        table.reloadData()
                     } catch {
                         debugPrint(error)
                     }
