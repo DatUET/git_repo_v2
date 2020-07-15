@@ -8,6 +8,9 @@
 
 import Foundation
 
+// FIXME: lớp này có ý nghĩa như lớp Global.swift mô tả trong file excel
+// FIXME: hạn chế lưu thông tin vào biến static để dùng chung vì các nhiều nơi dùng chung càng khó kiểm soát thay đổi
+// ví dụ như thông tin repo, loadmore... thì chỉ nên lưu ở view controller thuộc module tương ứng
 class Contains {
     public static var arrRepo = [Repository]()
     public static var loadMore = false

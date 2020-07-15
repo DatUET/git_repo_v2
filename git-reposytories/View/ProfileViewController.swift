@@ -39,6 +39,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @objc func reload() {
         table.reloadData()
+        // FIXME: không nên gọi lại hàm của view controller mà nên tách ra hàm riêng
+        // hàm này đang gây ra lỗi là addObserver sẽ bị gọi lại thêm lần nữa dẫn đến reload sẽ bị gọi nhiều lần khi có notification
         viewDidLoad()
     }
 
@@ -75,6 +77,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             try firebaseAuth.signOut()
             loginView.isHidden = false
             loginCtl.logOut()
+            // FIXME: tương tự FIXME trên
             viewDidLoad()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)

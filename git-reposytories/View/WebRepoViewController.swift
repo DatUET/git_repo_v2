@@ -10,6 +10,7 @@ import UIKit
 
 class WebRepoViewController: UIViewController {
     
+    // FIXME: chuyển sang dùng WKWebView nếu không app sẽ không được phép upload lên apple store
     @IBOutlet weak var repoWebView: UIWebView!
     var urlRepo = ""
 

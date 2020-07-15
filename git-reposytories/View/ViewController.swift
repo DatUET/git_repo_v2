@@ -208,6 +208,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // FIXME: cần chú ý code này, hiện tại controller đang cùng storyboard nên biến "storyboard" có giá trị
+        // trong trường hợp không cùng storyboard, giá trị của biến này sẽ bị nil
+        // nên luôn luôn khởi tạo lại storyboard cho chắc chắn khi phải làm việc với nhiều storyboard
         let webRepo = storyboard?.instantiateViewController(withIdentifier: "WebRepoViewController") as? WebRepoViewController
         webRepo?.urlRepo = Contains.arrRepo[indexPath.row].url
         self.navigationController?.pushViewController(webRepo!, animated: true)

@@ -15,6 +15,9 @@ class ConnectAPI{
     let parameters: Parameters = ["foo": "bar"]
     let cacheData = CacheData()
     
+    // FIXME: lớp gọi API không nên phụ thuộc vào các thành phần UI nên không truyền UITableView vào đây
+    // giả sử dữ liệu dùng làm data source cho collection view thì hàm này không dùng được
+    // nên truyền vào 1 hàm (closure) callback để trả lại dữ liệu
     public func getListRepo(page: Int, repoTableView: UITableView!) {
         if page == 1 {
             cacheData.deleteAllRepoDataCore(nameEntity: "RepositoryDataCore")
@@ -46,6 +49,7 @@ class ConnectAPI{
         }
     }
     
+    // FIXME: tương tự FIXME trên
     public func searchKey(page: Int, searchKey: String, repoTableView: UITableView!) {
         if page == 1 {
             Contains.arrRepo.removeAll()
@@ -78,6 +82,7 @@ class ConnectAPI{
         }
     }
     
+    // FIXME: tương tự FIXME trên
     public func sortRepo(page: Int, searchKey: String, typeSort: String, order: String, repoTableView: UITableView!) {
         if page == 1 {
             Contains.arrRepo.removeAll()
@@ -120,6 +125,7 @@ class ConnectAPI{
         }
     }
     
+    // FIXME: tương tự FIXME trên
     public func getRepoCurrentUser(table: UITableView) {
         Contains.arrRepoOfUser.removeAll()
         Contains.arrRepoPublicOfUser.removeAll()
