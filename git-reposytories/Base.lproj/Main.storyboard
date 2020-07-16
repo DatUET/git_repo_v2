@@ -267,22 +267,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yw9-dC-3oL">
-                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LkE-K5-ydo">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yw9-dC-3oL" firstAttribute="leading" secondItem="Dz7-P7-fu2" secondAttribute="leading" constant="20" id="3uU-9E-EnW"/>
-                            <constraint firstItem="yw9-dC-3oL" firstAttribute="top" secondItem="Dz7-P7-fu2" secondAttribute="top" constant="44" id="F86-H1-aSp"/>
-                            <constraint firstItem="Dz7-P7-fu2" firstAttribute="trailing" secondItem="yw9-dC-3oL" secondAttribute="trailing" constant="20" id="IR7-OY-uvr"/>
-                            <constraint firstItem="yw9-dC-3oL" firstAttribute="bottom" secondItem="Dz7-P7-fu2" secondAttribute="bottom" id="laV-HN-Ooh"/>
+                            <constraint firstItem="Dz7-P7-fu2" firstAttribute="trailing" secondItem="LkE-K5-ydo" secondAttribute="trailing" constant="20" id="1Dl-N0-B0R"/>
+                            <constraint firstItem="LkE-K5-ydo" firstAttribute="leading" secondItem="Dz7-P7-fu2" secondAttribute="leading" constant="20" id="7Oo-ha-mr6"/>
+                            <constraint firstItem="Dz7-P7-fu2" firstAttribute="bottom" secondItem="LkE-K5-ydo" secondAttribute="bottom" id="VZN-PN-SVZ"/>
+                            <constraint firstItem="LkE-K5-ydo" firstAttribute="top" secondItem="Dz7-P7-fu2" secondAttribute="top" id="uh6-LW-rba"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dz7-P7-fu2"/>
                     </view>
                     <connections>
-                        <outlet property="repoWebView" destination="yw9-dC-3oL" id="xH9-Yb-9Rb"/>
+                        <outlet property="repoWebView" destination="LkE-K5-ydo" id="AiM-en-CX3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEJ-TA-iY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -515,7 +519,7 @@
             </objects>
             <point key="canvasLocation" x="3015.9420289855075" y="-629.46428571428567"/>
         </scene>
-        <!--Item-->
+        <!--user-->
         <scene sceneID="hgk-rF-gg2">
             <objects>
                 <viewController id="IhK-LO-9ep" customClass="ProfileViewController" customModule="git_reposytories" customModuleProvider="target" sceneMemberID="viewController">
@@ -580,14 +584,14 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="avatarImage" destination="3pF-G3-KWp" id="kky-Y8-AHE"/>
-                                            <outlet property="nameLb" destination="MRG-mS-qA0" id="8jC-pT-zzG"/>
+                                            <outlet property="nameLb" destination="MRG-mS-qA0" id="YF4-YL-LYy"/>
                                             <outlet property="repoCountLb" destination="tUH-wS-rGh" id="gXh-dy-Fpd"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyRepoCell" rowHeight="134" id="2xl-Iw-yQs" customClass="MyReposTableViewCell" customModule="git_reposytories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="224" width="374" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2xl-Iw-yQs" id="zUh-lQ-Tpy">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2xl-Iw-yQs" id="zUh-lQ-Tpy">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="133.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -595,12 +599,12 @@
                                                     <rect key="frame" x="20" y="10" width="334" height="112"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRh-Nh-7Rf">
-                                                            <rect key="frame" x="96" y="34" width="167" height="45"/>
+                                                            <rect key="frame" x="8" y="34" width="285" height="45"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                             <state key="normal" title="My Repository"/>
                                                         </button>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="K1F-j8-63J">
-                                                            <rect key="frame" x="271" y="44" width="25" height="24"/>
+                                                            <rect key="frame" x="301" y="44" width="25" height="24"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -608,8 +612,8 @@
                                                         <constraint firstAttribute="width" constant="334" id="26f-8b-whZ"/>
                                                         <constraint firstItem="K1F-j8-63J" firstAttribute="top" secondItem="eqf-z5-idH" secondAttribute="top" constant="44" id="9Lb-Ye-wHe"/>
                                                         <constraint firstAttribute="height" constant="112" id="DVs-H4-djy"/>
-                                                        <constraint firstItem="sRh-Nh-7Rf" firstAttribute="leading" secondItem="eqf-z5-idH" secondAttribute="leading" constant="96" id="HdP-dD-6aj"/>
-                                                        <constraint firstAttribute="trailing" secondItem="K1F-j8-63J" secondAttribute="trailing" constant="38" id="Om8-ZE-f6b"/>
+                                                        <constraint firstItem="sRh-Nh-7Rf" firstAttribute="leading" secondItem="eqf-z5-idH" secondAttribute="leading" constant="8" id="HdP-dD-6aj"/>
+                                                        <constraint firstAttribute="trailing" secondItem="K1F-j8-63J" secondAttribute="trailing" constant="8" id="Om8-ZE-f6b"/>
                                                         <constraint firstItem="K1F-j8-63J" firstAttribute="leading" secondItem="sRh-Nh-7Rf" secondAttribute="trailing" constant="8" id="m7E-ty-2ne"/>
                                                         <constraint firstItem="sRh-Nh-7Rf" firstAttribute="top" secondItem="eqf-z5-idH" secondAttribute="top" constant="34" id="pa0-2L-zZ9"/>
                                                         <constraint firstAttribute="bottom" secondItem="sRh-Nh-7Rf" secondAttribute="bottom" constant="33" id="qCv-TM-hEO"/>
@@ -618,7 +622,7 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="eqf-z5-idH" secondAttribute="bottom" constant="10" id="NDD-Jh-37e"/>
+                                                <constraint firstAttribute="bottom" secondItem="eqf-z5-idH" secondAttribute="bottom" constant="11.5" id="NDD-Jh-37e"/>
                                                 <constraint firstItem="eqf-z5-idH" firstAttribute="top" secondItem="zUh-lQ-Tpy" secondAttribute="top" constant="10" id="rjQ-CB-SoU"/>
                                                 <constraint firstItem="eqf-z5-idH" firstAttribute="leading" secondItem="zUh-lQ-Tpy" secondAttribute="leading" constant="20" id="tLU-5b-x3f"/>
                                                 <constraint firstAttribute="trailing" secondItem="eqf-z5-idH" secondAttribute="trailing" constant="20" id="uDd-i8-5Cj"/>
@@ -639,12 +643,12 @@
                                                     <rect key="frame" x="20" y="11" width="334" height="112"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRD-sW-ALU">
-                                                            <rect key="frame" x="122" y="34" width="94" height="45"/>
+                                                            <rect key="frame" x="8" y="34" width="285" height="45"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                             <state key="normal" title="Log Out"/>
                                                         </button>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exit" translatesAutoresizingMaskIntoConstraints="NO" id="SP0-o3-1ln">
-                                                            <rect key="frame" x="224" y="44" width="25" height="24"/>
+                                                            <rect key="frame" x="301" y="44" width="25" height="24"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -656,8 +660,8 @@
                                                         <constraint firstAttribute="height" constant="112" id="OHy-mr-pG9"/>
                                                         <constraint firstItem="SP0-o3-1ln" firstAttribute="top" secondItem="bdU-XY-k7X" secondAttribute="top" constant="44" id="Uo7-La-7X9"/>
                                                         <constraint firstItem="eRD-sW-ALU" firstAttribute="top" secondItem="bdU-XY-k7X" secondAttribute="top" constant="34" id="Z1g-4n-hyE"/>
-                                                        <constraint firstItem="eRD-sW-ALU" firstAttribute="leading" secondItem="bdU-XY-k7X" secondAttribute="leading" constant="122" id="dKd-2u-wJm"/>
-                                                        <constraint firstAttribute="trailing" secondItem="SP0-o3-1ln" secondAttribute="trailing" constant="85" id="wfg-3f-0Vi"/>
+                                                        <constraint firstItem="eRD-sW-ALU" firstAttribute="leading" secondItem="bdU-XY-k7X" secondAttribute="leading" constant="8" id="dKd-2u-wJm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="SP0-o3-1ln" secondAttribute="trailing" constant="8" id="wfg-3f-0Vi"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -675,7 +679,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tRK-PI-FBj" customClass="LoginView" customModule="git_reposytories" customModuleProvider="target">
-                                <rect key="frame" x="20" y="88" width="374" height="725"/>
+                                <rect key="frame" x="20" y="85" width="374" height="725"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -683,7 +687,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="uV0-2d-6zM"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="user" selectedImage="user" id="qGQ-iY-RLB"/>
+                    <tabBarItem key="tabBarItem" title="user" image="user" selectedImage="user" id="qGQ-iY-RLB"/>
                     <connections>
                         <outlet property="loginView" destination="tRK-PI-FBj" id="VPv-nd-o7z"/>
                         <outlet property="table" destination="92t-PX-Nc4" id="Sbz-XS-LSF"/>
@@ -720,7 +724,7 @@
         <image name="home" width="25" height="25"/>
         <image name="issue" width="50" height="50"/>
         <image name="next" width="25" height="25"/>
-        <image name="star" width="50" height="50"/>
+        <image name="star" width="25" height="25"/>
         <image name="upload" width="25" height="25"/>
         <image name="user" width="25" height="25"/>
         <image name="watch" width="25" height="25"/>

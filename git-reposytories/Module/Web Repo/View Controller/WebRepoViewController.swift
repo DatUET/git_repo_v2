@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import WebKit
 
 class WebRepoViewController: UIViewController {
     
-    // FIXME: chuyển sang dùng WKWebView nếu không app sẽ không được phép upload lên apple store
-    @IBOutlet weak var repoWebView: UIWebView!
     var urlRepo = ""
 
+    @IBOutlet weak var repoWebView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let url = URL(string: urlRepo) {
-            repoWebView.loadRequest(URLRequest(url: url))
+            repoWebView.load(URLRequest(url: url))
         }
         
         // Do any additional setup after loading the view.

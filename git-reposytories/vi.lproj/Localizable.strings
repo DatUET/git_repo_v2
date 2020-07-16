@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  git-reposytories
+
+  Created by gem on 7/16/20.
+  Copyright © 2020 gem. All rights reserved.
+*/
+
+"login" = "Đăng nhập";
+"my repository" = "Reposytory của tôi";
+"logout" = "Đăng xuất";
+"public" = "Công khai";
+"private" = "Riêng tư";
+"home" = "Trang chủ";
+"user" = "Tôi";

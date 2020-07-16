@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var reposTableView: UITableView!
     @IBOutlet weak var searchTF: UITextField!
@@ -26,7 +26,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     private let refreshControl = UIRefreshControl()
     
-    var arrRepoHome = [Repository]()
+    var arrRepoHome = [Repository]() // lấy arr khi ko có mạng
+    var arrRepo = [Repository]() // arr chung
+    
+    var loadMore = false
+    var total_Repos = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +39,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         reposTableView.delegate = self
         reposTableView.refreshControl = refreshControl
         cna.isConnectedInternet()
-        if Contains.isConnect {
-            cna.getListRepo(page: curentPage, repoTableView: self.reposTableView)
+        if Global.isConnect {
+            cna.getListRepo(page: curentPage, callback: updateRepoList(arr:totalItem:))
         } else {
             arrRepoHome = cacheData.getRepoCoreData(nameEntity: "RepositoryDataCore")
-            Contains.arrRepo = arrRepoHome
+            arrRepo = arrRepoHome
         }
         searchTF.addTarget(self, action: #selector(search), for: .editingDidEndOnExit)
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -47,10 +51,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         forkSortBtn.addTarget(self, action: #selector(forkSort), for: .touchUpInside)
         starSortBtn.setTitleColor(.black, for: .normal)
         forkSortBtn.setTitleColor(.black, for: .normal)
-        
+    }
+    
+    func updateRepoList(arr: [Repository], totalItem: Int) {
+        for repo in arr {
+            arrRepo.append(repo)
+        }
+        if totalItem > 1000 {
+            total_Repos = 1000
+        } else {
+            total_Repos = totalItem
+        }
+        reposTableView.reloadData()
+        loadMore = false
     }
     
     @objc func srarSort() {
+        arrRepo.removeAll()
+        reposTableView.reloadData()
         curentPage = 1
         if mode == 2 {
             desc = !desc
@@ -69,10 +87,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             order = "asc"
             descSort.image = UIImage(named: "upload")
         }
-        if Contains.isConnect {
-            cna.sortRepo(page: 1, searchKey: searchKey, typeSort: "stars", order: order, repoTableView: self.reposTableView)
+        if Global.isConnect {
+            cna.sortRepo(page: 1, searchKey: searchKey, typeSort: "stars", order: order, callback: updateRepoList(arr:totalItem:))
         } else {
-            Contains.arrRepo =  Contains.arrRepo.sorted { (repo1, repo2) -> Bool in
+            arrRepo =  arrRepo.sorted { (repo1, repo2) -> Bool in
                 let star1 = repo1.star
                 let star2 = repo2.star
                 if desc {
@@ -86,6 +104,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @objc func forkSort() {
+        arrRepo.removeAll()
+        reposTableView.reloadData()
         curentPage = 1
         if mode == 3 {
             desc = !desc
@@ -104,10 +124,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             order = "asc"
             descSort.image = UIImage(named: "upload")
         }
-        if Contains.isConnect {
-            cna.sortRepo(page: 1, searchKey: searchKey, typeSort: "forks", order: order, repoTableView: self.reposTableView)
+        if Global.isConnect {
+            cna.sortRepo(page: 1, searchKey: searchKey, typeSort: "forks", order: order, callback: updateRepoList(arr:totalItem:))
         } else {
-            Contains.arrRepo =  Contains.arrRepo.sorted { (repo1, repo2) -> Bool in
+            arrRepo =  arrRepo.sorted { (repo1, repo2) -> Bool in
                 let fork1 = repo1.fork
                 let fork2 = repo2.fork
                 if desc {
@@ -121,26 +141,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @objc func refresh() {
-        if Contains.isConnect {
+        if Global.isConnect {
             let searchKey = searchTF.text!
-            Contains.arrRepo.removeAll()
+            arrRepo.removeAll()
             self.reposTableView.reloadData()
             curentPage = 1
             if mode == 0 {
-                cna.getListRepo(page: 1, repoTableView: self.reposTableView)
+                cna.getListRepo(page: 1, callback: updateRepoList(arr:totalItem:))
             } else if mode == 1{
-                cna.searchKey(page: 1, searchKey: searchKey, repoTableView: reposTableView)
+                cna.searchKey(page: 1, searchKey: searchKey, callback: updateRepoList(arr:totalItem:))
             } else if mode == 2 {
-                cna.sortRepo(page: 1, searchKey: searchKey, typeSort: "stars", order: order, repoTableView: self.reposTableView)
+                cna.sortRepo(page: 1, searchKey: searchKey, typeSort: "stars", order: order, callback: updateRepoList(arr:totalItem:))
             } else if mode == 3 {
                 
-                cna.sortRepo(page: 1, searchKey: searchKey, typeSort: "forks", order: order, repoTableView: self.reposTableView)
+                cna.sortRepo(page: 1, searchKey: searchKey, typeSort: "forks", order: order, callback: updateRepoList(arr:totalItem:))
             }
         }
         self.refreshControl.endRefreshing()
     }
     
     @objc func search() {
+        arrRepo.removeAll()
+        reposTableView.reloadData()
         let searchKey = searchTF.text!
         descSort.image = nil
         starSortBtn.setTitleColor(.black, for: .normal)
@@ -150,52 +172,37 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         forkSortBtn.setTitleColor(.black, for: .normal)
         if !searchKey.isEmpty{
             mode = 1
-            if Contains.isConnect {
-                cna.searchKey(page: curentPage, searchKey: searchTF.text!, repoTableView: reposTableView)
+            if Global.isConnect {
+                cna.searchKey(page: curentPage, searchKey: searchTF.text!, callback: updateRepoList(arr:totalItem:))
             } else {
-                Contains.arrRepo = arrRepoHome
-                Contains.arrRepo = Contains.arrRepo.filter({ (repo) -> Bool in
+                arrRepo = arrRepoHome
+                arrRepo = arrRepo.filter({ (repo) -> Bool in
                     return repo.reponame.lowercased().contains(searchKey.lowercased()) || repo.username.lowercased().contains(searchKey.lowercased())
                 })
                 self.reposTableView.reloadData()
             }
         } else {
             mode = 0
-            Contains.arrRepo.removeAll()
+            arrRepo.removeAll()
             self.reposTableView.reloadData()
-            if Contains.isConnect {
-                cna.getListRepo(page: curentPage, repoTableView: self.reposTableView)
+            if Global.isConnect {
+                cna.getListRepo(page: curentPage, callback: updateRepoList(arr:totalItem:))
             } else {
-                Contains.arrRepo = arrRepoHome
+                arrRepo = arrRepoHome
                 self.reposTableView.reloadData()
             }
         }
     }
-    
-    @objc func nextPage() {
-        if Contains.isConnect {
-            Contains.loadMore =  true
-            curentPage += 1
-            if mode == 0 {
-                cna.getListRepo(page: curentPage, repoTableView: self.reposTableView)
-            }
-            else if mode == 1 {
-                cna.searchKey(page: curentPage, searchKey: searchTF.text!, repoTableView: reposTableView)
-            } else if mode == 2 {
-                cna.sortRepo(page: curentPage, searchKey: searchTF.text!, typeSort: "stars", order: order, repoTableView: reposTableView)
-            } else if mode == 3 {
-                cna.sortRepo(page: curentPage, searchKey: searchTF.text!, typeSort: "forks", order: order, repoTableView: reposTableView)
-            }
-        }
-    }
-    
+}
+
+extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Contains.arrRepo.count
+        return arrRepo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = reposTableView.dequeueReusableCell(withIdentifier: "repoCell") as! RepositoryTableViewCell
-        let repo = Contains.arrRepo[indexPath.row]
+        let repo = arrRepo[indexPath.row]
         cell.reponame.text = repo.reponame
         cell.username.text = repo.username
         cell.numberStar.text = String(repo.star)
@@ -206,23 +213,40 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.useravatar.sd_setImage(with: URL(string: repo.avatar), placeholderImage: UIImage(named: "issue.png"))
         return cell
     }
-    
+}
+
+extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // FIXME: cần chú ý code này, hiện tại controller đang cùng storyboard nên biến "storyboard" có giá trị
-        // trong trường hợp không cùng storyboard, giá trị của biến này sẽ bị nil
-        // nên luôn luôn khởi tạo lại storyboard cho chắc chắn khi phải làm việc với nhiều storyboard
-        let webRepo = storyboard?.instantiateViewController(withIdentifier: "WebRepoViewController") as? WebRepoViewController
-        webRepo?.urlRepo = Contains.arrRepo[indexPath.row].url
+        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let webRepo = storyboard.instantiateViewController(withIdentifier: "WebRepoViewController") as? WebRepoViewController
+        webRepo?.urlRepo = arrRepo[indexPath.row].url
         self.navigationController?.pushViewController(webRepo!, animated: true)
-        
     }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contenHeight = scrollView.contentSize.height
         //debugPrint("offset y = \(offsetY) and \(contenHeight - scrollView.frame.height)")
         if offsetY > contenHeight - scrollView.frame.height && offsetY > 0 {
-            if !Contains.loadMore && Contains.arrRepo.count < Contains.total_Repos {
+            if !loadMore && arrRepo.count < total_Repos {
                 nextPage()
+            }
+        }
+    }
+    
+    func nextPage() {
+        if Global.isConnect {
+            loadMore =  true
+            curentPage += 1
+            if mode == 0 {
+                cna.getListRepo(page: curentPage, callback: updateRepoList(arr:totalItem:))
+            }
+            else if mode == 1 {
+                cna.searchKey(page: curentPage, searchKey: searchTF.text!, callback: updateRepoList(arr:totalItem:))
+            } else if mode == 2 {
+                cna.sortRepo(page: curentPage, searchKey: searchTF.text!, typeSort: "stars", order: order, callback: updateRepoList(arr:totalItem:))
+            } else if mode == 3 {
+                cna.sortRepo(page: curentPage, searchKey: searchTF.text!, typeSort: "forks", order: order, callback: updateRepoList(arr:totalItem:))
             }
         }
     }

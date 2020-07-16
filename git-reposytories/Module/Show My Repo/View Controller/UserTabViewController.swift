@@ -13,6 +13,13 @@ class UserTabViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var repoTableView: UITableView!
     @IBOutlet weak var tabBer: UISegmentedControl!
     
+    var arrRepoOfUser = [Repository]()
+    var arrRepoPublicOfUser = [Repository]()
+    var arrRepoPrivateOfUser = [Repository]()
+    
+    let cna = ConnectAPI()
+    let cacheData = CacheData()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,25 +27,43 @@ class UserTabViewController: UIViewController, UITableViewDataSource, UITableVie
         repoTableView.delegate = self
         
         tabBer.addTarget(self, action: #selector(changeTab(sender:)), for: .valueChanged)
+        
+        if Global.isConnect {
+            cna.getRepoCurrentUser(callback: updateRepoUser(arrPublic:arrPrivate:))
+        } else {
+            arrRepoPublicOfUser = cacheData.getRepoCoreData(nameEntity: "MyRepositoryPublicDataCore")
+            arrRepoPrivateOfUser = cacheData.getRepoCoreData(nameEntity: "MyRepositoryPrivateDataCore")
+            arrRepoOfUser = arrRepoPublicOfUser
+        }
+    }
+    
+    func updateRepoUser(arrPublic: [Repository], arrPrivate: [Repository]) {
+        for repo in arrPublic {
+            arrRepoPublicOfUser.append(repo)
+        }
+        for repo in arrPrivate {
+            arrRepoPrivateOfUser.append(repo)
+        }
+        arrRepoOfUser = arrPublic
+        repoTableView.reloadData()
     }
     
     @objc func changeTab(sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            Contains.arrRepoOfUser = Contains.arrRepoPublicOfUser
+            arrRepoOfUser = arrRepoPublicOfUser
         } else {
-            Contains.arrRepoOfUser = Contains.arrRepoPrivateOfUser
+            arrRepoOfUser = arrRepoPrivateOfUser
         }
         self.repoTableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //debugPrint(Contains.arrRepo.count)
-        return Contains.arrRepoOfUser.count
+        return arrRepoOfUser.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = repoTableView.dequeueReusableCell(withIdentifier: "repoCell2") as! RepositoryTableViewCell
-        let repo = Contains.arrRepoOfUser[indexPath.row]
+        let repo = arrRepoOfUser[indexPath.row]
         cell.reponame.text = repo.reponame
         cell.username.text = repo.username
         cell.numberStar.text = String(repo.star)

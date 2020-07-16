@@ -15,33 +15,27 @@ class ConnectAPI{
     let parameters: Parameters = ["foo": "bar"]
     let cacheData = CacheData()
     
-    // FIXME: lớp gọi API không nên phụ thuộc vào các thành phần UI nên không truyền UITableView vào đây
-    // giả sử dữ liệu dùng làm data source cho collection view thì hàm này không dùng được
-    // nên truyền vào 1 hàm (closure) callback để trả lại dữ liệu
-    public func getListRepo(page: Int, repoTableView: UITableView!) {
+    public func getListRepo(page: Int, callback: @escaping ([Repository], Int) -> Void) {
         if page == 1 {
             cacheData.deleteAllRepoDataCore(nameEntity: "RepositoryDataCore")
         }
         Alamofire.request(self.URL + "language:&per_page=50&page=\(page)")
-            .responseJSON { response in
+            .responseJSON { [weak self] response in
+                guard let self = self else { return }
                 if response.result.isSuccess {
                     do {
                         let json = try JSON(data: response.data!)
                         let totalItem = json["total_count"].intValue
-                        if totalItem > 1000 {
-                            Contains.total_Repos = 1000
-                        } else {
-                            Contains.total_Repos = totalItem
-                        }
+                        
+                        var arrRepoTemp = [Repository]()
                         if let items = json["items"].array {
                             for item in items {
                                 let repo = self.pareJson(json: item)
-                                Contains.arrRepo.append(repo)
+                                arrRepoTemp.append(repo)
                                 self.cacheData.saveRepoToCoreData(repo: repo, nameEntity: "RepositoryDataCore")
                             }
                         }
-                        repoTableView.reloadData()
-                        Contains.loadMore = false
+                        callback(arrRepoTemp, totalItem)
                     } catch {
                         debugPrint(error)
                     }
@@ -49,32 +43,22 @@ class ConnectAPI{
         }
     }
     
-    // FIXME: tương tự FIXME trên
-    public func searchKey(page: Int, searchKey: String, repoTableView: UITableView!) {
-        if page == 1 {
-            Contains.arrRepo.removeAll()
-            repoTableView.reloadData()
-        }
-        
+    public func searchKey(page: Int, searchKey: String, callback: @escaping ([Repository], Int) -> Void) {
         Alamofire.request(self.URL + "\(searchKey)&language:&per_page=50&page=\(page)")
-            .responseJSON { response in
+            .responseJSON { [weak self] response in
+                guard let self = self else { return }
                 if response.result.isSuccess {
                     do {
                         let json = try JSON(data: response.data!)
                         let totalItem = json["total_count"].intValue
-                        if totalItem > 1000 {
-                            Contains.total_Repos = 1000
-                        } else {
-                            Contains.total_Repos = totalItem
-                        }
+                        var arrRepoTemp = [Repository]()
                         if let items = json["items"].array {
                             for item in items {
                                 let repo = self.pareJson(json: item)
-                                Contains.arrRepo.append(repo)
+                                arrRepoTemp.append(repo)
                             }
                         }
-                        repoTableView.reloadData()
-                        Contains.loadMore = false
+                        callback(arrRepoTemp, totalItem)
                     } catch {
                         debugPrint(error)
                     }
@@ -82,13 +66,7 @@ class ConnectAPI{
         }
     }
     
-    // FIXME: tương tự FIXME trên
-    public func sortRepo(page: Int, searchKey: String, typeSort: String, order: String, repoTableView: UITableView!) {
-        if page == 1 {
-            Contains.arrRepo.removeAll()
-            repoTableView.reloadData()
-        }
-        
+    public func sortRepo(page: Int, searchKey: String, typeSort: String, order: String, callback: @escaping ([Repository], Int) -> Void) {
         // build url
         var urlAPI = self.URL
         if !searchKey.isEmpty {
@@ -100,24 +78,20 @@ class ConnectAPI{
         urlAPI += "&sort=\(typeSort)&order=\(order)"
         
         Alamofire.request(urlAPI)
-            .responseJSON { response in
+            .responseJSON { [weak self] response in
+                guard let self = self else { return }
                 if  response.result.isSuccess {
                     do {
                         let json = try JSON(data: response.data!)
                         let totalItem = json["total_count"].intValue
-                        if totalItem > 1000 {
-                            Contains.total_Repos = 1000
-                        } else {
-                            Contains.total_Repos = totalItem
-                        }
+                        var arrRepoTemp = [Repository]()
                         if let items = json["items"].array {
                             for item in items {
                                 let repo = self.pareJson(json: item)
-                                Contains.arrRepo.append(repo)
+                                arrRepoTemp.append(repo)
                             }
                         }
-                        repoTableView.reloadData()
-                        Contains.loadMore = false
+                        callback(arrRepoTemp, totalItem)
                     } catch {
                         debugPrint(error)
                     }
@@ -125,38 +99,35 @@ class ConnectAPI{
         }
     }
     
-    // FIXME: tương tự FIXME trên
-    public func getRepoCurrentUser(table: UITableView) {
-        Contains.arrRepoOfUser.removeAll()
-        Contains.arrRepoPublicOfUser.removeAll()
-        Contains.arrRepoPublicOfUser.removeAll()
+    public func getRepoCurrentUser(callback: @escaping ([Repository], [Repository]) -> Void) {
         self.cacheData.deleteAllRepoDataCore(nameEntity: "MyRepositoryPublicDataCore")
         self.cacheData.deleteAllRepoDataCore(nameEntity: "MyRepositoryPrivateDataCore")
         let url = "https://api.github.com/user/repos"
         
         let headers = [
-            "Authorization": "token " + Contains.accessToken
+            "Authorization": "token " + Global.accessToken
         ]
         Alamofire.request(url, method: .get, headers: headers)
-            .responseJSON { response in
+            .responseJSON { [weak self] response in
+                guard let self = self else { return }
                 if  response.result.isSuccess {
                     do {
+                        var arrRepoPublicUserTemp = [Repository]()
+                        var arrRepoPrivateUserTemp = [Repository]()
                         let json = try JSON(data: response.data!)
                         if let items = json.array {
                             for item in items {
                                 let repo = self.pareJson(json: item)
                                 if !item["private"].boolValue {
-                                    Contains.arrRepoPublicOfUser.append(repo)
+                                    arrRepoPublicUserTemp.append(repo)
                                     self.cacheData.saveRepoToCoreData(repo: repo, nameEntity: "MyRepositoryPublicDataCore")
                                 } else {
-                                    Contains.arrRepoPrivateOfUser.append(repo)
+                                    arrRepoPrivateUserTemp.append(repo)
                                     self.cacheData.saveRepoToCoreData(repo: repo, nameEntity: "MyRepositoryPrivateDataCore")
                                 }
                             }
                         }
-                        Contains.arrRepoOfUser = Contains.arrRepoPublicOfUser
-//                        debugPrint(Contains.arrRepoPublicOfUser.count + Contains.arrRepoPrivateOfUser.count)
-                        table.reloadData()
+                        callback(arrRepoPublicUserTemp, arrRepoPrivateUserTemp)
                     } catch {
                         debugPrint(error)
                     }
@@ -178,6 +149,6 @@ class ConnectAPI{
     }
     
     public func isConnectedInternet() {
-        Contains.isConnect = NetworkReachabilityManager()!.isReachable
+        Global.isConnect = NetworkReachabilityManager()!.isReachable
     }
 }

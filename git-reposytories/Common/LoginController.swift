@@ -18,15 +18,15 @@ class LoginController {
     
     public func getInfo() {
         let preferences = UserDefaults.standard
-        Contains.userName = preferences.string(forKey: "username")!
-        Contains.avatarUser = preferences.string(forKey: "avatar")!
-        Contains.accessToken = preferences.string(forKey: "token")!
+        Global.userName = preferences.string(forKey: "username")!
+        Global.avatarUser = preferences.string(forKey: "avatar")!
+        Global.accessToken = preferences.string(forKey: "token")!
     }
     
     public func logOut() {
         saveInfo(username: "", avatar: "", token: "")
-        Contains.userName = ""
-        Contains.avatarUser = ""
-        Contains.accessToken = ""
+        Global.userName = ""
+        Global.avatarUser = ""
+        Global.accessToken = ""
     }
 }

@@ -12,7 +12,6 @@ import FirebaseAuth
 class LoginView: UIView {
     @IBOutlet var contentView: LoginView!
     @IBOutlet weak var loginBtn: UIButton!
-    // FIXME: nên tách code auth provider thành class riêng để dễ dàng quản lý nếu sau này thêm nhiều loại provider khác
     var provider = OAuthProvider(providerID: "github.com")
     let loginCtr = LoginController()
     
@@ -60,9 +59,6 @@ class LoginView: UIView {
                     let avatar = authResult?.additionalUserInfo?.profile!["avatar_url"] as! String
                     let cre = authResult?.credential as! OAuthCredential
                     let token = cre.accessToken
-                    Contains.userName = username
-                    Contains.avatarUser = avatar
-                    Contains.accessToken = token!
                     self.loginCtr.saveInfo(username: username, avatar: avatar, token: token!)
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
                     

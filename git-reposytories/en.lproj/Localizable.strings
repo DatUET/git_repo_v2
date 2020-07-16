@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  git-reposytories
+
+  Created by gem on 7/16/20.
+  Copyright © 2020 gem. All rights reserved.
+*/
+
+"login" = "Login";
+"my repository" = "My Repository";
+"logout" = "Logout";
+"public" = "Public";
+"private" = "Private";
+"home" = "Home";
+"user" = "User";
