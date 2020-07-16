@@ -55,7 +55,7 @@ typedef void(^SDSetImageBlock)(UIImage * _Nullable image, NSData * _Nullable ima
  * @param url            The url for the image.
  * @param placeholder    The image to be set initially, until the image request finishes.
  * @param options        The options to use when downloading the image. @see SDWebImageOptions for the possible values.
- * @param context        A context contains different options to perform specify changes or processes, see `SDWebImageContextOption`. This hold the extra objects which `options` enum can not hold.
+ * @param context        A context Global different options to perform specify changes or processes, see `SDWebImageContextOption`. This hold the extra objects which `options` enum can not hold.
  * @param setImageBlock  Block used for custom set image code. If not provide, use the built-in set image code (supports `UIImageView/NSImageView` and `UIButton/NSButton` currently)
  * @param progressBlock  A block called while image is downloading
  *                       @note the progress block is executed on a background queue

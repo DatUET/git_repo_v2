@@ -21,15 +21,25 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0p-F5-ruL">
-                    <rect key="frame" x="175" y="427" width="65" height="45"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0p-F5-ruL">
+                    <rect key="frame" x="110" y="426" width="195" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="195" id="lEe-dP-KRv"/>
+                        <constraint firstAttribute="height" constant="45" id="xyi-kP-3mF"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                     <state key="normal" title="Login"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="M0p-F5-ruL" secondAttribute="bottom" constant="391" id="9m9-KU-dOa"/>
+                <constraint firstItem="M0p-F5-ruL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="110" id="9tc-vb-Oxh"/>
+                <constraint firstItem="M0p-F5-ruL" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="382" id="OeE-7a-s8D"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="M0p-F5-ruL" secondAttribute="trailing" constant="109" id="cDe-au-Feo"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="34.782608695652179" y="34.821428571428569"/>
         </view>
     </objects>
 </document>

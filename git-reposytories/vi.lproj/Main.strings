@@ -1,0 +1,78 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8Da-0W-RAG"; */
+"8Da-0W-RAG.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "D0z-Uo-xSR"; */
+"D0z-Uo-xSR.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DwP-W6-0WZ"; */
+"DwP-W6-0WZ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "F86-Vl-vYH"; */
+"F86-Vl-vYH.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "user"; ObjectID = "Fpr-vW-A8r"; */
+"Fpr-vW-A8r.title" = "user";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HTn-Lx-KHQ"; */
+"HTn-Lx-KHQ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Fork"; ObjectID = "I5Z-OR-17P"; */
+"I5Z-OR-17P.normalTitle" = "Fork";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "L6T-VY-EqJ"; */
+"L6T-VY-EqJ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MRG-mS-qA0"; */
+"MRG-mS-qA0.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NP4-aa-FKg"; */
+"NP4-aa-FKg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Otm-gd-w2Q"; */
+"Otm-gd-w2Q.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PdQ-jd-M6P"; */
+"PdQ-jd-M6P.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "UGd-3i-fzJ"; */
+"UGd-3i-fzJ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Star"; ObjectID = "X2p-r4-ZCh"; */
+"X2p-r4-ZCh.normalTitle" = "Sao";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "a2P-TM-EnE"; */
+"a2P-TM-EnE.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "home"; ObjectID = "cMU-Xk-YxU"; */
+"cMU-Xk-YxU.title" = "Trang chủ";
+
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "eRD-sW-ALU"; */
+"eRD-sW-ALU.normalTitle" = "Đăng xuất";
+
+/* Class = "UISegmentedControl"; oS6-pc-kvy.segmentTitles[0] = "Public"; ObjectID = "oS6-pc-kvy"; */
+"oS6-pc-kvy.segmentTitles[0]" = "Công khai";
+
+/* Class = "UISegmentedControl"; oS6-pc-kvy.segmentTitles[1] = "Private"; ObjectID = "oS6-pc-kvy"; */
+"oS6-pc-kvy.segmentTitles[1]" = "Riêng tư";
+
+/* Class = "UITextField"; accessibilityHint = "Search"; ObjectID = "phA-Rl-wRD"; */
+"phA-Rl-wRD.accessibilityHint" = "Tìm kiếm";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "qGQ-iY-RLB"; */
+"qGQ-iY-RLB.title" = "Tôi";
+
+/* Class = "UIButton"; normalTitle = "My Repository"; ObjectID = "sRh-Nh-7Rf"; */
+"sRh-Nh-7Rf.normalTitle" = "Repository của tôi";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tUH-wS-rGh"; */
+"tUH-wS-rGh.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wKK-da-DXq"; */
+"wKK-da-DXq.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wnn-Le-HZR"; */
+"wnn-Le-HZR.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "y0Y-jQ-iRi"; */
+"y0Y-jQ-iRi.text" = "Label";

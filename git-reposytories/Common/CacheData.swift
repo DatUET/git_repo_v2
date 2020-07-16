@@ -25,7 +25,7 @@ class CacheData {
         repoInDataCore.setValue(repo.username, forKey: "username")
         repoInDataCore.setValue(repo.watch, forKey: "watch")
         do{
-           try managedContext.save()
+            try managedContext.save()
         } catch {
             debugPrint("ERR on save core data \(error)")
         }

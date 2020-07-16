@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		30F9CB5855B2A331CBBD6277 /* Pods_git_reposytories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87DBEC1EE2F84B8A1DCE2D64 /* Pods_git_reposytories.framework */; };
+		B66F93A824C035670000CE91 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B66F93AA24C035670000CE91 /* Localizable.strings */; };
+		B66F93AD24C036FE0000CE91 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F93AC24C036FE0000CE91 /* String.swift */; };
+		B66F93B024C03F860000CE91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B66F93B224C03F860000CE91 /* InfoPlist.strings */; };
+		B66F93BF24C0653D0000CE91 /* LoginScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66F93C124C0653D0000CE91 /* LoginScreen.xib */; };
 		B68C543F24AEC5F200D44A1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C543E24AEC5F200D44A1A /* AppDelegate.swift */; };
 		B68C544124AEC5F200D44A1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C544024AEC5F200D44A1A /* ViewController.swift */; };
 		B68C544424AEC5F200D44A1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68C544224AEC5F200D44A1A /* Main.storyboard */; };
@@ -17,14 +21,13 @@
 		B68C545F24AEC5F300D44A1A /* git_reposytoriesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C545E24AEC5F300D44A1A /* git_reposytoriesUITests.swift */; };
 		B68C547224AEC8FB00D44A1A /* ConnectAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C547024AEC8FB00D44A1A /* ConnectAPI.swift */; };
 		B68C547524AEC93500D44A1A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C547324AEC93500D44A1A /* Repository.swift */; };
-		B68C547624AEC93500D44A1A /* Contains.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C547424AEC93500D44A1A /* Contains.swift */; };
+		B68C547624AEC93500D44A1A /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C547424AEC93500D44A1A /* Global.swift */; };
 		B68C547F24AEC96600D44A1A /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C547824AEC96600D44A1A /* RepositoryTableViewCell.swift */; };
 		B68C548024AEC96600D44A1A /* WebRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C547924AEC96600D44A1A /* WebRepoViewController.swift */; };
 		B68C548224AEC96600D44A1A /* SignOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C547B24AEC96600D44A1A /* SignOutTableViewCell.swift */; };
 		B68C548324AEC96600D44A1A /* UserTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C547C24AEC96600D44A1A /* UserTabViewController.swift */; };
 		B68C548424AEC96600D44A1A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C547D24AEC96600D44A1A /* LoginView.swift */; };
 		B68C548824AECA6D00D44A1A /* dataGithub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B68C548524AECA6D00D44A1A /* dataGithub.xcdatamodeld */; };
-		B68C548924AECA6D00D44A1A /* LoginScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B68C548724AECA6D00D44A1A /* LoginScreen.xib */; };
 		B68C548B24AECCB400D44A1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B68C548A24AECCB400D44A1A /* GoogleService-Info.plist */; };
 		B68C548D24AECDCD00D44A1A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C548C24AECDCD00D44A1A /* LoginController.swift */; };
 		B68C548F24AED40C00D44A1A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C548E24AED40C00D44A1A /* ProfileViewController.swift */; };
@@ -54,6 +57,15 @@
 		87DBEC1EE2F84B8A1DCE2D64 /* Pods_git_reposytories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_git_reposytories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97ECFD33938230383B3AC549 /* Pods-git-reposytories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-git-reposytories.debug.xcconfig"; path = "Target Support Files/Pods-git-reposytories/Pods-git-reposytories.debug.xcconfig"; sourceTree = "<group>"; };
 		B3B8B16FEB04268D31DDE387 /* Pods-git-reposytories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-git-reposytories.release.xcconfig"; path = "Target Support Files/Pods-git-reposytories/Pods-git-reposytories.release.xcconfig"; sourceTree = "<group>"; };
+		B66F93A424C034150000CE91 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		B66F93A924C035670000CE91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B66F93AB24C035690000CE91 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B66F93AC24C036FE0000CE91 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		B66F93B124C03F860000CE91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B66F93B324C03F880000CE91 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B66F93B924C0506C0000CE91 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B66F93C024C0653D0000CE91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginScreen.xib; sourceTree = "<group>"; };
+		B66F93C324C065450000CE91 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LoginScreen.strings; sourceTree = "<group>"; };
 		B68C543B24AEC5F200D44A1A /* git-reposytories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "git-reposytories.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68C543E24AEC5F200D44A1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68C544024AEC5F200D44A1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,14 +81,13 @@
 		B68C546024AEC5F300D44A1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68C547024AEC8FB00D44A1A /* ConnectAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectAPI.swift; sourceTree = "<group>"; };
 		B68C547324AEC93500D44A1A /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		B68C547424AEC93500D44A1A /* Contains.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contains.swift; sourceTree = "<group>"; };
+		B68C547424AEC93500D44A1A /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		B68C547824AEC96600D44A1A /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		B68C547924AEC96600D44A1A /* WebRepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRepoViewController.swift; sourceTree = "<group>"; };
 		B68C547B24AEC96600D44A1A /* SignOutTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutTableViewCell.swift; sourceTree = "<group>"; };
 		B68C547C24AEC96600D44A1A /* UserTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTabViewController.swift; sourceTree = "<group>"; };
 		B68C547D24AEC96600D44A1A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B68C548624AECA6D00D44A1A /* dataGithub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = dataGithub.xcdatamodel; sourceTree = "<group>"; };
-		B68C548724AECA6D00D44A1A /* LoginScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginScreen.xib; sourceTree = "<group>"; };
 		B68C548A24AECCB400D44A1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B68C548C24AECDCD00D44A1A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		B68C548E24AED40C00D44A1A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +139,91 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B66F939924C02E210000CE91 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B66F939B24C02E3A0000CE91 /* Custom Views */,
+				B66F939A24C02E2F0000CE91 /* ViewController */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B66F939A24C02E2F0000CE91 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B68C544024AEC5F200D44A1A /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B66F939B24C02E3A0000CE91 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				B68C547824AEC96600D44A1A /* RepositoryTableViewCell.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		B66F939C24C02EB60000CE91 /* My Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B66F939D24C02EC40000CE91 /* Custom Views */,
+				B66F939E24C02EE60000CE91 /* ViewController */,
+			);
+			path = "My Profile";
+			sourceTree = "<group>";
+		};
+		B66F939D24C02EC40000CE91 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				B68C549224AED55800D44A1A /* UserDetailTableViewCell.swift */,
+				B68C547B24AEC96600D44A1A /* SignOutTableViewCell.swift */,
+				B68C549024AED4E900D44A1A /* MyReposTableViewCell.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		B66F939E24C02EE60000CE91 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B68C547D24AEC96600D44A1A /* LoginView.swift */,
+				B68C548E24AED40C00D44A1A /* ProfileViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B66F939F24C02F410000CE91 /* Web Repo */ = {
+			isa = PBXGroup;
+			children = (
+				B66F93A024C02F520000CE91 /* View Controller */,
+			);
+			path = "Web Repo";
+			sourceTree = "<group>";
+		};
+		B66F93A024C02F520000CE91 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B68C547924AEC96600D44A1A /* WebRepoViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		B66F93A124C02F610000CE91 /* Show My Repo */ = {
+			isa = PBXGroup;
+			children = (
+				B66F93A324C02FB70000CE91 /* View Controller */,
+			);
+			path = "Show My Repo";
+			sourceTree = "<group>";
+		};
+		B66F93A324C02FB70000CE91 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B68C547C24AEC96600D44A1A /* UserTabViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		B68C543224AEC5F200D44A1A = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +235,7 @@
 				6208F59F875A42E587A9E95E /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		B68C543C24AEC5F200D44A1A /* Products */ = {
 			isa = PBXGroup;
@@ -154,16 +251,18 @@
 			isa = PBXGroup;
 			children = (
 				B68C546E24AEC60E00D44A1A /* Model */,
-				B68C546D24AEC60500D44A1A /* Controller */,
-				B68C546C24AEC5FA00D44A1A /* View */,
+				B68C546D24AEC60500D44A1A /* Common */,
+				B68C546C24AEC5FA00D44A1A /* Module */,
 				B68C543E24AEC5F200D44A1A /* AppDelegate.swift */,
 				B68C544224AEC5F200D44A1A /* Main.storyboard */,
 				B68C544524AEC5F300D44A1A /* Assets.xcassets */,
 				B68C544724AEC5F300D44A1A /* LaunchScreen.storyboard */,
 				B68C548524AECA6D00D44A1A /* dataGithub.xcdatamodeld */,
-				B68C548724AECA6D00D44A1A /* LoginScreen.xib */,
+				B66F93C124C0653D0000CE91 /* LoginScreen.xib */,
 				B68C548A24AECCB400D44A1A /* GoogleService-Info.plist */,
 				B68C544A24AEC5F300D44A1A /* Info.plist */,
+				B66F93AA24C035670000CE91 /* Localizable.strings */,
+				B66F93B224C03F860000CE91 /* InfoPlist.strings */,
 			);
 			path = "git-reposytories";
 			sourceTree = "<group>";
@@ -186,37 +285,33 @@
 			path = "git-reposytoriesUITests";
 			sourceTree = "<group>";
 		};
-		B68C546C24AEC5FA00D44A1A /* View */ = {
+		B68C546C24AEC5FA00D44A1A /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				B68C549024AED4E900D44A1A /* MyReposTableViewCell.swift */,
-				B68C547D24AEC96600D44A1A /* LoginView.swift */,
-				B68C547824AEC96600D44A1A /* RepositoryTableViewCell.swift */,
-				B68C547B24AEC96600D44A1A /* SignOutTableViewCell.swift */,
-				B68C547C24AEC96600D44A1A /* UserTabViewController.swift */,
-				B68C547924AEC96600D44A1A /* WebRepoViewController.swift */,
-				B68C544024AEC5F200D44A1A /* ViewController.swift */,
-				B68C548E24AED40C00D44A1A /* ProfileViewController.swift */,
-				B68C549224AED55800D44A1A /* UserDetailTableViewCell.swift */,
+				B66F93A124C02F610000CE91 /* Show My Repo */,
+				B66F939F24C02F410000CE91 /* Web Repo */,
+				B66F939C24C02EB60000CE91 /* My Profile */,
+				B66F939924C02E210000CE91 /* Home */,
 			);
-			path = View;
+			path = Module;
 			sourceTree = "<group>";
 		};
-		B68C546D24AEC60500D44A1A /* Controller */ = {
+		B68C546D24AEC60500D44A1A /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				B68C547024AEC8FB00D44A1A /* ConnectAPI.swift */,
 				B68C548C24AECDCD00D44A1A /* LoginController.swift */,
 				B68C549424AEDCCB00D44A1A /* CacheData.swift */,
 			);
-			path = Controller;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		B68C546E24AEC60E00D44A1A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B68C547424AEC93500D44A1A /* Contains.swift */,
+				B68C547424AEC93500D44A1A /* Global.swift */,
 				B68C547324AEC93500D44A1A /* Repository.swift */,
+				B66F93AC24C036FE0000CE91 /* String.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +404,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = B68C543224AEC5F200D44A1A;
 			productRefGroup = B68C543C24AEC5F200D44A1A /* Products */;
@@ -328,7 +424,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B68C544924AEC5F300D44A1A /* LaunchScreen.storyboard in Resources */,
-				B68C548924AECA6D00D44A1A /* LoginScreen.xib in Resources */,
+				B66F93B024C03F860000CE91 /* InfoPlist.strings in Resources */,
+				B66F93A824C035670000CE91 /* Localizable.strings in Resources */,
+				B66F93BF24C0653D0000CE91 /* LoginScreen.xib in Resources */,
 				B68C548B24AECCB400D44A1A /* GoogleService-Info.plist in Resources */,
 				B68C544624AEC5F300D44A1A /* Assets.xcassets in Resources */,
 				B68C544424AEC5F200D44A1A /* Main.storyboard in Resources */,
@@ -402,7 +500,7 @@
 				B68C544124AEC5F200D44A1A /* ViewController.swift in Sources */,
 				B68C547F24AEC96600D44A1A /* RepositoryTableViewCell.swift in Sources */,
 				B68C548D24AECDCD00D44A1A /* LoginController.swift in Sources */,
-				B68C547624AEC93500D44A1A /* Contains.swift in Sources */,
+				B68C547624AEC93500D44A1A /* Global.swift in Sources */,
 				B68C548F24AED40C00D44A1A /* ProfileViewController.swift in Sources */,
 				B68C547524AEC93500D44A1A /* Repository.swift in Sources */,
 				B68C549124AED4E900D44A1A /* MyReposTableViewCell.swift in Sources */,
@@ -412,6 +510,7 @@
 				B68C548824AECA6D00D44A1A /* dataGithub.xcdatamodeld in Sources */,
 				B68C549324AED55800D44A1A /* UserDetailTableViewCell.swift in Sources */,
 				B68C548424AEC96600D44A1A /* LoginView.swift in Sources */,
+				B66F93AD24C036FE0000CE91 /* String.swift in Sources */,
 				B68C547224AEC8FB00D44A1A /* ConnectAPI.swift in Sources */,
 				B68C548324AEC96600D44A1A /* UserTabViewController.swift in Sources */,
 			);
@@ -449,10 +548,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B66F93AA24C035670000CE91 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66F93A924C035670000CE91 /* en */,
+				B66F93AB24C035690000CE91 /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B66F93B224C03F860000CE91 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66F93B124C03F860000CE91 /* en */,
+				B66F93B324C03F880000CE91 /* vi */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B66F93C124C0653D0000CE91 /* LoginScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B66F93C024C0653D0000CE91 /* Base */,
+				B66F93C324C065450000CE91 /* vi */,
+			);
+			name = LoginScreen.xib;
+			sourceTree = "<group>";
+		};
 		B68C544224AEC5F200D44A1A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B68C544324AEC5F200D44A1A /* Base */,
+				B66F93A424C034150000CE91 /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -461,6 +588,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B68C544824AEC5F300D44A1A /* Base */,
+				B66F93B924C0506C0000CE91 /* vi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -472,6 +600,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -533,6 +662,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

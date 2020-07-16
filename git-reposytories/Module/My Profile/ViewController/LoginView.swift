@@ -59,9 +59,6 @@ class LoginView: UIView {
                     let avatar = authResult?.additionalUserInfo?.profile!["avatar_url"] as! String
                     let cre = authResult?.credential as! OAuthCredential
                     let token = cre.accessToken
-                    Contains.userName = username
-                    Contains.avatarUser = avatar
-                    Contains.accessToken = token!
                     self.loginCtr.saveInfo(username: username, avatar: avatar, token: token!)
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
                     
