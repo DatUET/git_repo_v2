@@ -10,10 +10,9 @@ import Foundation
 
 class Global {
     
-//    public static var avatarUser = ""
+    public static var avatarUser = ""
     public static var userName = ""
     public static var accessToken = ""
     
     public static var isConnect = true
-    public static var isLoggedIn = false
 }

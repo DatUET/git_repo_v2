@@ -1,12 +1,6 @@
 
-/* Class = "UILabel"; text = "Version 1.0"; ObjectID = "6yp-8C-yEd"; */
-"6yp-8C-yEd.text" = "Phiên bản 1.0";
-
 /* Class = "UILabel"; text = "Label"; ObjectID = "8Da-0W-RAG"; */
 "8Da-0W-RAG.text" = "Label";
-
-/* Class = "UILabel"; text = "Github Repository Browser"; ObjectID = "8TA-B1-wIq"; */
-"8TA-B1-wIq.text" = "Kho code Github";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "D0z-Uo-xSR"; */
 "D0z-Uo-xSR.text" = "Label";
@@ -18,10 +12,7 @@
 "F86-Vl-vYH.text" = "Label";
 
 /* Class = "UITabBarItem"; title = "user"; ObjectID = "Fpr-vW-A8r"; */
-"Fpr-vW-A8r.title" = "username";
-
-/* Class = "UILabel"; text = "Copyright © 2020 GEM. All rights reserved"; ObjectID = "FqB-Da-V72"; */
-"FqB-Da-V72.text" = "Bản quyền GEM Việt Nam 2020";
+"Fpr-vW-A8r.title" = "user";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "HTn-Lx-KHQ"; */
 "HTn-Lx-KHQ.text" = "Label";
@@ -68,11 +59,11 @@
 /* Class = "UITextField"; accessibilityHint = "Search"; ObjectID = "phA-Rl-wRD"; */
 "phA-Rl-wRD.accessibilityHint" = "Tìm kiếm";
 
-/* Class = "UITabBarItem"; title = "user"; ObjectID = "qGQ-iY-RLB"; */
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "qGQ-iY-RLB"; */
 "qGQ-iY-RLB.title" = "Tôi";
 
 /* Class = "UIButton"; normalTitle = "My Repository"; ObjectID = "sRh-Nh-7Rf"; */
-"sRh-Nh-7Rf.normalTitle" = "Repository của  ";
+"sRh-Nh-7Rf.normalTitle" = "Repository của tôi";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "tUH-wS-rGh"; */
 "tUH-wS-rGh.text" = "Label";
