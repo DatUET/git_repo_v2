@@ -16,4 +16,5 @@ class Strings {
     public static var textPublic: String { return NSLocalizedString("public", comment: "") }
     public static var textPrivate: String { return NSLocalizedString("private", comment: "") }
     public static var textUser: String { return NSLocalizedString("user", comment: "") }
+    public static var textCopyright: String { return NSLocalizedString("copyright", comment: "") }
 }

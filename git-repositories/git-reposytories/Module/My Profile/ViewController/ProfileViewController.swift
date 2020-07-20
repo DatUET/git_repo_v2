@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setUpLoginScreen() {
-        if Auth.auth().currentUser != nil {
+        if Global.isLoggedIn {
             loginCtl.getInfo()
             loginView.isHidden = true
         } else {
@@ -64,7 +64,7 @@ extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserDetailCell") as! UserDetailTableViewCell
-            cell.avatarImage.sd_setImage(with: URL(string: Global.avatarUser), placeholderImage: UIImage(named: "issue.png"))
+            cell.avatarImage.sd_setImage(with: Auth.auth().currentUser?.photoURL, placeholderImage: UIImage(named: "issue.png"))
             cell.nameLb.text = Global.userName
             return cell
         } else if indexPath.row == 1 {

@@ -56,12 +56,11 @@ class LoginView: UIView {
                         debugPrint(error)
                     }
                     let username = authResult?.additionalUserInfo?.profile!["login"] as! String
-                    let avatar = authResult?.additionalUserInfo?.profile!["avatar_url"] as! String
                     let cre = authResult?.credential as! OAuthCredential
                     let token = cre.accessToken
-                    self.loginCtr.saveInfo(username: username, avatar: avatar, token: token!)
+                    Global.isLoggedIn = true
+                    self.loginCtr.saveInfo(isLoggedIn: true, username: username, token: token!)
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
-                    
                 }
             }
         }

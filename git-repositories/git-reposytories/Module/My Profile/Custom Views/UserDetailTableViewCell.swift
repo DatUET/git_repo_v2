@@ -10,7 +10,6 @@ import UIKit
 
 class UserDetailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var repoCountLb: UILabel!
     @IBOutlet weak var nameLb: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     override func awakeFromNib() {

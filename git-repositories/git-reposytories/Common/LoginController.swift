@@ -9,24 +9,23 @@
 import Foundation
 
 class LoginController {
-    public func saveInfo(username: String, avatar: String, token: String) {
+    public func saveInfo(isLoggedIn: Bool, username: String, token: String) {
         let preferences = UserDefaults.standard
+        preferences.set(isLoggedIn, forKey: "isLoggedIn")
         preferences.set(username, forKey: "username")
-        preferences.set(avatar, forKey: "avatar")
         preferences.set(token, forKey: "token")
     }
     
     public func getInfo() {
         let preferences = UserDefaults.standard
+        Global.isLoggedIn = preferences.bool(forKey: "isLoggedIn")
         Global.userName = preferences.string(forKey: "username")!
-        Global.avatarUser = preferences.string(forKey: "avatar")!
         Global.accessToken = preferences.string(forKey: "token")!
     }
     
     public func logOut() {
-        saveInfo(username: "", avatar: "", token: "")
+        saveInfo(isLoggedIn: false, username: "", token: "")
         Global.userName = ""
-        Global.avatarUser = ""
         Global.accessToken = ""
     }
 }
