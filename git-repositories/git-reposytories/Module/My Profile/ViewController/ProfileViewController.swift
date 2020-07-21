@@ -24,11 +24,9 @@ class ProfileViewController: UIViewController {
     }
     
     func setUpLoginScreen() {
-<<<<<<< HEAD:git-repositories/git-reposytories/Module/My Profile/ViewController/ProfileViewController.swift
+        let preferences = UserDefaults.standard
+        Global.isLoggedIn = preferences.bool(forKey: "isLoggedIn")
         if Global.isLoggedIn {
-=======
-        if Auth.auth().currentUser != nil {
->>>>>>> 6ff53b6012ec06c51fbdff0dd1e9c6c507b56ec4:git-repositories/git-reposytories/Module/My Profile/ViewController/ProfileViewController.swift
             loginCtl.getInfo()
             loginView.isHidden = true
         } else {
@@ -68,11 +66,7 @@ extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserDetailCell") as! UserDetailTableViewCell
-<<<<<<< HEAD:git-repositories/git-reposytories/Module/My Profile/ViewController/ProfileViewController.swift
             cell.avatarImage.sd_setImage(with: Auth.auth().currentUser?.photoURL, placeholderImage: UIImage(named: "issue.png"))
-=======
-            cell.avatarImage.sd_setImage(with: URL(string: Global.avatarUser), placeholderImage: UIImage(named: "issue.png"))
->>>>>>> 6ff53b6012ec06c51fbdff0dd1e9c6c507b56ec4:git-repositories/git-reposytories/Module/My Profile/ViewController/ProfileViewController.swift
             cell.nameLb.text = Global.userName
             return cell
         } else if indexPath.row == 1 {

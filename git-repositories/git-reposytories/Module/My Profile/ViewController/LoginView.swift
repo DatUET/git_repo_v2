@@ -58,12 +58,8 @@ class LoginView: UIView {
                     let username = authResult?.additionalUserInfo?.profile!["login"] as! String
                     let cre = authResult?.credential as! OAuthCredential
                     let token = cre.accessToken
-<<<<<<< HEAD:git-repositories/git-reposytories/Module/My Profile/ViewController/LoginView.swift
                     Global.isLoggedIn = true
                     self.loginCtr.saveInfo(isLoggedIn: true, username: username, token: token!)
-=======
-                    self.loginCtr.saveInfo(username: username, avatar: avatar, token: token!)
->>>>>>> 6ff53b6012ec06c51fbdff0dd1e9c6c507b56ec4:git-repositories/git-reposytories/Module/My Profile/ViewController/LoginView.swift
                     NotificationCenter.default.post(name: NSNotification.Name("reload"), object: nil)
                 }
             }

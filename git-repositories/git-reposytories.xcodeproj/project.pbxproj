@@ -12,10 +12,7 @@
 		B66F93AD24C036FE0000CE91 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F93AC24C036FE0000CE91 /* String.swift */; };
 		B66F93B024C03F860000CE91 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B66F93B224C03F860000CE91 /* InfoPlist.strings */; };
 		B66F93BF24C0653D0000CE91 /* LoginScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B66F93C124C0653D0000CE91 /* LoginScreen.xib */; };
-<<<<<<< HEAD:git-repositories/git-reposytories.xcodeproj/project.pbxproj
 		B66F93C924C06B180000CE91 /* LauchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F93C824C06B180000CE91 /* LauchViewController.swift */; };
-=======
->>>>>>> 6ff53b6012ec06c51fbdff0dd1e9c6c507b56ec4:git-reposytories.xcodeproj/project.pbxproj
 		B68C543F24AEC5F200D44A1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C543E24AEC5F200D44A1A /* AppDelegate.swift */; };
 		B68C544124AEC5F200D44A1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68C544024AEC5F200D44A1A /* ViewController.swift */; };
 		B68C544424AEC5F200D44A1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68C544224AEC5F200D44A1A /* Main.storyboard */; };
@@ -61,25 +58,15 @@
 		87DBEC1EE2F84B8A1DCE2D64 /* Pods_git_reposytories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_git_reposytories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97ECFD33938230383B3AC549 /* Pods-git-reposytories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-git-reposytories.debug.xcconfig"; path = "Target Support Files/Pods-git-reposytories/Pods-git-reposytories.debug.xcconfig"; sourceTree = "<group>"; };
 		B3B8B16FEB04268D31DDE387 /* Pods-git-reposytories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-git-reposytories.release.xcconfig"; path = "Target Support Files/Pods-git-reposytories/Pods-git-reposytories.release.xcconfig"; sourceTree = "<group>"; };
-<<<<<<< HEAD:git-repositories/git-reposytories.xcodeproj/project.pbxproj
 		B66853CD24C5471500C09090 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
-=======
-		B66F93A424C034150000CE91 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
->>>>>>> 6ff53b6012ec06c51fbdff0dd1e9c6c507b56ec4:git-reposytories.xcodeproj/project.pbxproj
 		B66F93A924C035670000CE91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B66F93AB24C035690000CE91 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B66F93AC24C036FE0000CE91 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B66F93B124C03F860000CE91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B66F93B324C03F880000CE91 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-<<<<<<< HEAD:git-repositories/git-reposytories.xcodeproj/project.pbxproj
 		B66F93C024C0653D0000CE91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginScreen.xib; sourceTree = "<group>"; };
 		B66F93C324C065450000CE91 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LoginScreen.strings; sourceTree = "<group>"; };
 		B66F93C824C06B180000CE91 /* LauchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchViewController.swift; sourceTree = "<group>"; };
-=======
-		B66F93B924C0506C0000CE91 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		B66F93C024C0653D0000CE91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginScreen.xib; sourceTree = "<group>"; };
-		B66F93C324C065450000CE91 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LoginScreen.strings; sourceTree = "<group>"; };
->>>>>>> 6ff53b6012ec06c51fbdff0dd1e9c6c507b56ec4:git-reposytories.xcodeproj/project.pbxproj
 		B68C543B24AEC5F200D44A1A /* git-reposytories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "git-reposytories.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68C543E24AEC5F200D44A1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68C544024AEC5F200D44A1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -238,7 +225,6 @@
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD:git-repositories/git-reposytories.xcodeproj/project.pbxproj
 		B66F93C624C06AF20000CE91 /* Lauch Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,8 +241,6 @@
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> 6ff53b6012ec06c51fbdff0dd1e9c6c507b56ec4:git-reposytories.xcodeproj/project.pbxproj
 		B68C543224AEC5F200D44A1A = {
 			isa = PBXGroup;
 			children = (
@@ -321,10 +305,7 @@
 		B68C546C24AEC5FA00D44A1A /* Module */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD:git-repositories/git-reposytories.xcodeproj/project.pbxproj
 				B66F93C624C06AF20000CE91 /* Lauch Screen */,
-=======
->>>>>>> 6ff53b6012ec06c51fbdff0dd1e9c6c507b56ec4:git-reposytories.xcodeproj/project.pbxproj
 				B66F93A124C02F610000CE91 /* Show My Repo */,
 				B66F939F24C02F410000CE91 /* Web Repo */,
 				B66F939C24C02EB60000CE91 /* My Profile */,
@@ -617,11 +598,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B68C544324AEC5F200D44A1A /* Base */,
-<<<<<<< HEAD:git-repositories/git-reposytories.xcodeproj/project.pbxproj
 				B66853CD24C5471500C09090 /* vi */,
-=======
-				B66F93A424C034150000CE91 /* vi */,
->>>>>>> 6ff53b6012ec06c51fbdff0dd1e9c6c507b56ec4:git-reposytories.xcodeproj/project.pbxproj
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -630,7 +607,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B68C544824AEC5F300D44A1A /* Base */,
-				B66F93B924C0506C0000CE91 /* vi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
